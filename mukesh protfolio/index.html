@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Professional Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      color: #333;
+      line-height: 1.6;
+      perspective: 1000px;
+    }
+    header {
+      background: #232f3e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?technology,code') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.6);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      animation: slideIn 2s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .card:hover {
+      transform: rotateY(3deg) translateY(-10px);
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .card ul li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      animation: pulse 1s ease-in-out infinite alternate;
+    }
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ffa41c;
+      font-size: 1.2rem;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+    .floating-window, .floating-skill {
+      position: fixed;
+      background: #232f3e;
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .floating-window {
+      bottom: 20px;
+      right: 20px;
+      display: none;
+    }
+    .floating-window.active {
+      display: block;
+    }
+    .floating-skill {
+      top: 20px;
+      left: 20px;
+      animation: floatSkill 4s ease-in-out infinite;
+    }
+    @keyframes floatSkill {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .btn {
+      background: #ffa41c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .social-links, .subscribe-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .social-links a {
+      color: #232f3e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .subscribe-input {
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.pravatar.cc/120" alt="Profile Picture" class="profile-pic" />
+    <h2>Hi, I'm a Web Developer</h2>
+  </section>
+
+  <div class="floating-skill">
+    <strong>🛠️ Skills:</strong>
+    <ul>
+      <li><i class="fab fa-html5"></i> HTML5</li>
+      <li><i class="fab fa-css3-alt"></i> CSS3</li>
+      <li><i class="fab fa-js-square"></i> JavaScript</li>
+      <li><i class="fas fa-laptop-code"></i> Responsive Design</li>
+      <li><i class="fab fa-python"></i> Python</li>
+      <li><i class="fab fa-react"></i> React.js</li>
+      <li><i class="fas fa-database"></i> MongoDB / MySQL</li>
+    </ul>
+  </div>
+
+  <section id="about" class="section">
+    <div class="card">
+      <h3>About Me</h3>
+      <ul>
+        <li>I build modern and responsive websites.</li>
+        <li>Skilled in frontend and backend development.</li>
+        <li>Love to design elegant UIs and build scalable systems.</li>
+        <li>Student at XYZ University</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="card">
+      <h3>Project 1</h3>
+      <ul>
+        <li>Amazon-style product page</li>
+        <li>Filtering system</li>
+        <li>Cart integration</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Project 2</h3>
+      <ul>
+        <li>Responsive layout</li>
+        <li>Floating UI elements</li>
+        <li>3D interaction</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>GitHub Projects</h3>
+      <ul>
+        <li><a href="https://github.com/yourusername/project1" target="_blank">Live Project 1 ↗</a></li>
+        <li><a href="https://github.com/yourusername/project2" target="_blank">Live Project 2 ↗</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="card">
+      <h3>Experience</h3>
+      <ul>
+        <li><strong>Web Developer Intern</strong> at ABC Tech (Jan 2024 - May 2024)</li>
+        <li><strong>Open Source Contributor</strong> - Hacktoberfest</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <div class="card">
+      <h3>Certifications</h3>
+      <ul>
+        <li>Meta Front-End Developer (Coursera)</li>
+        <li>Responsive Web Design (freeCodeCamp)</li>
+        <li>JavaScript Algorithms and Data Structures</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="card">
+      <h3>Contact Me</h3>
+      <p>Email: youremail@example.com</p>
+
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://facebook.com/yourusername" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://tiktok.com/@yourusername" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      </div>
+
+      <div class="subscribe-section">
+        <input type="email" placeholder="Subscribe with your email" class="subscribe-input" />
+        <button class="btn">Subscribe</button>
+      </div>
+
+      <a href="your-resume.pdf" class="btn" download>Download Resume</a>
+    </div>
+  </section>
+
+  <div class="floating-window" id="floatingWindow">
+    <p>💬 Need help navigating? Click here to chat!</p>
+    <button class="btn" onclick="closeFloatingWindow()">Close</button>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("floatingWindow").classList.add("active");
+    }, 5000);
+
+    function closeFloatingWindow() {
+      document.getElementById("floatingWindow").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
